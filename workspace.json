@@ -3,6 +3,8 @@
   "version": 2,
   "projects": {
     "markdown": "libs/markdown",
+    "reactapp": "apps/reactapp",
+    "reactapp-e2e": "apps/reactapp-e2e",
     "shared-mdx-elements": "libs/shared/mdx-elements",
     "shared-ui": "libs/shared/ui",
     "site": "apps/site",
