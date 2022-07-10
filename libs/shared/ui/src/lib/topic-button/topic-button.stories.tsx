@@ -13,4 +13,6 @@ const Template: ComponentStory<typeof TopicButton> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  topicName: 'Next.js',
+};
