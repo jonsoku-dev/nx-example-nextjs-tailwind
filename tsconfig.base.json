@@ -21,7 +21,8 @@
       ],
       "@nx-example-3/shared/mdx-elements/*": [
         "libs/shared/mdx-elements/src/lib/*"
-      ]
+      ],
+      "@nx-example-3/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
