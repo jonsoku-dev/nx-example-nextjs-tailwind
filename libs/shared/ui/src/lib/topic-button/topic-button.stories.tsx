@@ -7,7 +7,9 @@ export default {
 } as ComponentMeta<typeof TopicButton>;
 
 const Template: ComponentStory<typeof TopicButton> = (args) => (
-  <TopicButton {...args} />
+  <div className="bg-slate-400 p-20">
+    <TopicButton {...args} />
+  </div>
 );
 
 export const Primary = Template.bind({});
