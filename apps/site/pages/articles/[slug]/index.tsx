@@ -7,10 +7,15 @@ import {
   renderMarkdown,
 } from '@nx-example-3/markdown';
 import { MDXRemote } from 'next-mdx-remote';
+import { Youtube } from '@nx-example-3/shared/mdx-elements';
 
 export interface ArticleProps extends ParsedUrlQuery {
   slug: string;
 }
+
+const mdxElements = {
+  Youtube,
+};
 
 const POSTS_PATH = join(process.cwd(), '_articles');
 
@@ -22,7 +27,7 @@ export function Article({ frontMatter, html }) {
         <div>by {frontMatter.author.name}</div>
       </article>
       <hr />
-      <MDXRemote {...html} />
+      <MDXRemote {...html} components={mdxElements} />
     </div>
   );
 }

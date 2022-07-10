@@ -15,7 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-example-3/markdown": ["libs/markdown/src/index.ts"]
+      "@nx-example-3/markdown": ["libs/markdown/src/index.ts"],
+      "@nx-example-3/shared/mdx-elements": [
+        "libs/shared/mdx-elements/src/index.ts"
+      ],
+      "@nx-example-3/shared/mdx-elments": [
+        "libs/shared/mdx-elments/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
