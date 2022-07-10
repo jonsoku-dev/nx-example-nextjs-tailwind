@@ -11,6 +11,7 @@ export function getParsedFileContentBySlug(
   const fileContent = readFileSync(postFilePath);
 
   const { data, content } = matter(fileContent);
+
   return {
     frontMatter: data,
     content,
