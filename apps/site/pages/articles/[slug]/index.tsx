@@ -7,15 +7,17 @@ import {
   renderMarkdown,
 } from '@nx-example-3/markdown';
 import { MDXRemote } from 'next-mdx-remote';
-import { Youtube } from '@nx-example-3/shared/mdx-elements';
-import CustomLink from '../../../../../libs/shared/mdx-elements/src/lib/custom-link/custom-link';
+import dynamic from 'next/dynamic';
+import { CustomLink } from '@nx-example-3/shared/mdx-elements';
 
 export interface ArticleProps extends ParsedUrlQuery {
   slug: string;
 }
 
 const mdxElements = {
-  Youtube,
+  Youtube: dynamic(async () => {
+    return await import('@nx-example-3/shared/mdx-elements/youtube/youtube');
+  }),
   a: CustomLink,
 };
 
