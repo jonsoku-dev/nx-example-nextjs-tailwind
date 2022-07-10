@@ -7,6 +7,8 @@ export function getParsedFileContentBySlug(
   fileName: string,
   postsPath: string
 ) {
+  console.log('console!');
+
   const postFilePath = join(postsPath, `${fileName}.mdx`);
   const fileContent = readFileSync(postFilePath);
 
