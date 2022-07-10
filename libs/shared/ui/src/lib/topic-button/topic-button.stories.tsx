@@ -1,16 +1,28 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { TopicButton } from './topic-button';
+// libs/shared/ui/src/lib/topic-button/topic-button.stories.tsx
+import { Story, Meta } from '@storybook/react';
+import { useState } from 'react';
+import { TopicButton, TopicButtonProps } from './topic-button';
 
 export default {
   component: TopicButton,
   title: 'TopicButton',
-} as ComponentMeta<typeof TopicButton>;
+  argTypes: {
+    onClick: { action: 'onClick executed!' },
+  },
+} as Meta;
 
-const Template: ComponentStory<typeof TopicButton> = (args) => (
-  <div className="bg-slate-400 p-20">
-    <TopicButton {...args} />
-  </div>
-);
+const Template: Story<TopicButtonProps> = (args) => {
+  const [clickedTopic, setClickedTopic] = useState<string | null>(null);
+  return (
+    <div className="bg-gray-100 p-20">
+      <TopicButton
+        {...args}
+        onClick={(topicName) => setClickedTopic(topicName)}
+      />
+      {clickedTopic && <div>Button has been clicked: {clickedTopic}</div>}
+    </div>
+  );
+};
 
 export const Primary = Template.bind({});
 Primary.args = {
